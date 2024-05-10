@@ -1,0 +1,35 @@
+{
+  "name": "@keleshteri/sentry-nestjs",
+  "version": "1.0.0",
+  "description": " sentry for nestjs",
+  "keywords": [],
+  "author": {
+    "name": "MMSK Keleshteri",
+    "email": "web.developer.keleshteri@gmail.com"
+  },
+  "contributors": [
+    {
+      "name": "MMSK Keleshteri",
+      "email": "web.developer.keleshteri@gmail.com"
+    }
+  ],
+  "license": "ISC",
+  "main": "dist/index.js",
+  "files": [
+    "dist/**/*",
+    "*.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/keleshteri/sentry-nestjs.git"
+  },
+   "bugs": "https://github.com/keleshteri/sentry-nestjs/issues",
+  "scripts": {
+    "build": "rimraf dist && tsc",
+    "prepublish": "npm run build",
+    "push": "npm run build && npm --no-git-tag-version version patch && git add . && git commit -m \"patch version\" && git push && npm publish --access public"
+  }
+}
